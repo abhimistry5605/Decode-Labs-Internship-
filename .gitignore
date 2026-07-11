@@ -1,0 +1,17 @@
+# Dependency folders
+node_modules/
+Week-1/node_modules/
+
+# Build output
+Week-1/dist/
+
+# Secret configurations
+.env
+Week-1/.env
+
+# Operating system / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
