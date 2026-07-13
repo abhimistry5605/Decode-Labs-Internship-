@@ -194,14 +194,6 @@ const LoginRegister = () => {
             )}
           </button>
         </form>
-
-        {/* Sandbox Credentials helper Box */}
-        <div className="auth-footer-help">
-          <h4 style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '6px' }}>Sandbox logins:</h4>
-          <div style={{ marginBottom: '4px' }}><strong>Student:</strong> <code>student@educircuit.com</code> / <code>student123</code></div>
-          <div style={{ marginBottom: '4px' }}><strong>Faculty:</strong> <code>college@educircuit.com</code> / <code>college123</code></div>
-          <div><strong>Admin:</strong> <code>admin@educircuit.com</code> / <code>admin123</code></div>
-        </div>
       </div>
     </div>
   );
