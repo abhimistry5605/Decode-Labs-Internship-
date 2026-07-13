@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Open+Sans:wght@400;600;800&display=swap');
+@import "./components/Navbar.css";
+@import "./components/Footer.css";
+@import "./pages/Pages.css";
+
+/* 
+ * 2025 UI/UX Palette & Design Tokens
+ */
+:root {
+  /* Color Swatches */
+  --color-mocha-mousse: #A5986E;
+  /* Mapped warm mocha tone */
+  --color-ethereal-blue: #A0D4E0;
+  /* Mapped ethereal blue */
+  --color-moonlit-grey: #F2F0EA;
+  /* Warm light grey background */
+
+  /* UI Palette Mapping */
+  --bg-primary: var(--color-moonlit-grey);
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #ECE9DF;
+
+  --text-primary: #2D2A24;
+  --text-secondary: #5C574C;
+  --text-muted: #8A8374;
+  --border-color: #D6CFBF;
+
+  --accent-cyan: var(--color-ethereal-blue);
+  --accent-indigo: var(--color-mocha-mousse);
+  --accent-purple: #8C7E6C;
+  --accent-gradient: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-cyan) 100%);
+
+  --success: #4D8A64;
+  --warning: #D1824B;
+  --danger: #B8524D;
+
+  /* Typography Configuration */
+  --font-headlines: 'Inter', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Layout Dimensions */
+  --nav-height: 50px;
+  /* Checklist Nav Height Constraint */
+  --max-width: 1200px;
+}
+
+/* 
+ * Global Reset & Baseline Styling
+ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headlines);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* Global Layout Containers & UI Micro-Components */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--accent-indigo);
+  color: white;
+  font-family: var(--font-headlines);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(165, 152, 110, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-purple);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(165, 152, 110, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-headlines);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--text-muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent-cyan);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-indigo);
+}
+
+/* 
+ * Subtle Animated Blue Glow Effect
+ */
+@keyframes subtle-blue-glow-pulse-card {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 0 8px rgba(160, 212, 224, 0.32);
+  }
+
+  50% {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 0 16px rgba(160, 212, 224, 0.68);
+  }
+}
+
+@keyframes subtle-blue-glow-pulse-btn {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 6px rgba(165, 152, 110, 0.15), 0 0 6px rgba(160, 212, 224, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 4px 6px rgba(165, 152, 110, 0.15), 0 0 14px rgba(160, 212, 224, 0.65);
+  }
+}
+
+@keyframes subtle-blue-glow-pulse-input {
+
+  0%,
+  100% {
+    box-shadow: 0 0 4px rgba(160, 212, 224, 0.28);
+  }
+
+  50% {
+    box-shadow: 0 0 11px rgba(160, 212, 224, 0.58);
+  }
+}
+
+/* Apply to Cards & Important Containers */
+.product-card,
+.service-card,
+.specs-card,
+.card-panel,
+.details-image-container,
+.quantity-selector,
+.bulk-inquiry-promo {
+  animation: subtle-blue-glow-pulse-card 4s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Apply to Buttons */
+.btn-primary,
+.btn-secondary,
+.qty-btn {
+  animation: subtle-blue-glow-pulse-btn 3.5s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Apply to Input Fields, Select Elements, Textareas & Search Bars */
+.search-input,
+.select-box,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+  animation: subtle-blue-glow-pulse-input 4.5s ease-in-out infinite;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover States to preserve and enhance the blue glow */
+.product-card:hover,
+.service-card:hover,
+.specs-card:hover,
+.card-panel:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 0 18px rgba(160, 212, 224, 0.68) !important;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  box-shadow: 0 6px 12px rgba(165, 152, 110, 0.2), 0 0 14px rgba(160, 212, 224, 0.65) !important;
+}
+
+/* Enhanced Focus Glow State */
+.search-input:focus,
+.select-box:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-ethereal-blue) !important;
+  box-shadow: 0 0 12px rgba(160, 212, 224, 0.72) !important;
+  outline: none;
+  animation: none;
+}
+
+/* 
+ * Custom Lightning Pulse Arrow ⚡──► CSS & Animations
+ */
+.pulse-arrow {
+  width: 32px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+/* Lightning Bolt default state */
+.pulse-arrow path.lightning {
+  fill: var(--accent-indigo);
+  transition: fill 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Guide Line */
+.pulse-arrow line.wire-guide {
+  stroke: var(--accent-indigo);
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.35;
+  transition: stroke 0.3s ease, opacity 0.3s ease;
+}
+
+/* Pulse Line animating along the wire */
+.pulse-arrow line.wire-pulse {
+  stroke: var(--accent-indigo);
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 4 12;
+  stroke-dashoffset: 16;
+  animation: circuit-idle-pulse 2s linear infinite;
+  transition: stroke 0.3s ease;
+}
+
+/* Arrowhead */
+.pulse-arrow path.head {
+  fill: var(--accent-indigo);
+  transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effects */
+.btn-primary:hover .pulse-arrow path.lightning,
+.btn-secondary:hover .pulse-arrow path.lightning,
+.product-card:hover .pulse-arrow path.lightning,
+a:hover .pulse-arrow path.lightning,
+button:hover .pulse-arrow path.lightning {
+  fill: var(--color-ethereal-blue);
+  filter: drop-shadow(0 0 4px var(--color-ethereal-blue));
+  transform: scale(1.08);
+}
+
+.btn-primary:hover .pulse-arrow line.wire-guide,
+.btn-secondary:hover .pulse-arrow line.wire-guide,
+.product-card:hover .pulse-arrow line.wire-guide,
+a:hover .pulse-arrow line.wire-guide,
+button:hover .pulse-arrow line.wire-guide {
+  stroke: var(--color-ethereal-blue);
+  opacity: 0.65;
+}
+
+.btn-primary:hover .pulse-arrow line.wire-pulse,
+.btn-secondary:hover .pulse-arrow line.wire-pulse,
+.product-card:hover .pulse-arrow line.wire-pulse,
+a:hover .pulse-arrow line.wire-pulse,
+button:hover .pulse-arrow line.wire-pulse {
+  stroke: var(--color-ethereal-blue);
+  animation: circuit-hover-pulse 0.7s linear infinite;
+}
+
+.btn-primary:hover .pulse-arrow path.head,
+.btn-secondary:hover .pulse-arrow path.head,
+.product-card:hover .pulse-arrow path.head,
+a:hover .pulse-arrow path.head,
+button:hover .pulse-arrow path.head {
+  fill: var(--color-ethereal-blue);
+  filter: drop-shadow(0 0 5px var(--color-ethereal-blue));
+  animation: circuit-pulse-head-flash 0.7s ease-in-out infinite;
+}
+
+@keyframes circuit-idle-pulse {
+  0% {
+    stroke-dashoffset: 16;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circuit-hover-pulse {
+  0% {
+    stroke-dashoffset: 16;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circuit-pulse-head-flash {
+
+  0%,
+  70% {
+    fill: var(--accent-indigo);
+    filter: none;
+  }
+
+  85%,
+  100% {
+    fill: var(--color-ethereal-blue);
+    filter: drop-shadow(0 0 8px var(--color-ethereal-blue));
+  }
+}
+
+/* 
+ * Combo Card Special Border and Glow Styles
+ */
+.product-card.combo-card {
+  border: 2px solid var(--accent-indigo) !important;
+  background: linear-gradient(to bottom, var(--bg-secondary) 85%, rgba(165, 152, 110, 0.05) 100%) !important;
+  animation: subtle-combo-glow-pulse 4s ease-in-out infinite !important;
+}
+
+.product-card.combo-card:hover {
+  box-shadow: 0 10px 24px rgba(165, 152, 110, 0.22), 0 0 24px rgba(165, 152, 110, 0.5) !important;
+  transform: translateY(-6px);
+}
+
+@keyframes subtle-combo-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 0 8px rgba(165, 152, 110, 0.22);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 0 18px rgba(165, 152, 110, 0.48);
+  }
+}
+
+/* Hero visual ambient glowing backdrop circles */
+.hero-glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.hero-glow-circle.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: var(--color-ethereal-blue);
+  top: 15%;
+  left: 10%;
+}
+
+.hero-glow-circle.circle-2 {
+  width: 180px;
+  height: 180px;
+  background: var(--accent-indigo);
+  bottom: 10%;
+  right: 10%;
+}

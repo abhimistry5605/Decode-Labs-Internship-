@@ -1,13 +1,18 @@
 # Dependency folders
 node_modules/
 Week-1/node_modules/
+Week-2/node_modules/
+Week-2/backend/node_modules/
 
-# Build output
+# Build outputs
 Week-1/dist/
+Week-2/dist/
 
 # Secret configurations
 .env
 Week-1/.env
+Week-2/.env
+Week-2/backend/.env
 
 # Operating system / IDE files
 .DS_Store
