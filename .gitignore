@@ -3,16 +3,26 @@ node_modules/
 Week-1/node_modules/
 Week-2/node_modules/
 Week-2/backend/node_modules/
+Week-3/node_modules/
+Week-3/backend/node_modules/
+Week-4/node_modules/
+Week-4/backend/node_modules/
 
 # Build outputs
 Week-1/dist/
 Week-2/dist/
+Week-3/dist/
+Week-4/dist/
 
 # Secret configurations
 .env
 Week-1/.env
 Week-2/.env
 Week-2/backend/.env
+Week-3/.env
+Week-3/backend/.env
+Week-4/.env
+Week-4/backend/.env
 
 # Operating system / IDE files
 .DS_Store

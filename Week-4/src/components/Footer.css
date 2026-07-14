@@ -1,0 +1,142 @@
+/* Footer styles for EduCircuit Labs */
+
+.footer {
+  background-color: #2D2A24; /* Rich warm dark charcoal grounding for footer */
+  color: #D6CFBF; /* Light earthy warm text for high contrast readability */
+  border-top: 1px solid var(--border-color);
+  padding: 60px 0 0 0;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-headlines);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.brand-description {
+  color: #B3ABA0;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #D6CFBF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  color: white;
+  border-color: var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-family: var(--font-headlines);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #B3ABA0;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links ul li a:hover {
+  color: white;
+}
+
+.contact-info {
+  list-style: none;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #B3ABA0;
+  font-size: 0.85rem;
+}
+
+.contact-icon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px 0;
+  background-color: #201E1A; /* Even darker shade for copyright bar */
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #8A8374;
+}
+
+.footer-tagline {
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .bottom-container {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
